@@ -1,0 +1,53 @@
+unit viewCadastrarPedido;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.WinXPickers, Vcl.Mask, Vcl.ComCtrls, Vcl.Imaging.pngimage, pedido,
+  dao.usuario;
+
+type
+  TfrmCadastrarPedido = class(TForm)
+    panelPageCadastro: TPanel;
+    panelImagemEmpresa: TPanel;
+    Image1: TImage;
+    panelDadosCliente: TPanel;
+    lblDataHoraEntrega: TLabel;
+    lblNomeCliente: TLabel;
+    lblTelefoneCliente: TLabel;
+    btConfirmar: TButton;
+    dataEntrega: TDateTimePicker;
+    editEnderecoCliente: TLabeledEdit;
+    editNomeCliente: TEdit;
+    editTelefoneCliente: TMaskEdit;
+    horaEntrega: TTimePicker;
+    rdbtClienteRetira: TRadioGroup;
+    procedure btConfirmarClick(Sender: TObject);
+  private
+  public
+  end;
+
+implementation
+
+
+{$R *.dfm}
+
+
+procedure TfrmCadastrarPedido.btConfirmarClick(Sender: TObject);
+var
+  lPedido : TPedido;
+  lDAOPedido : TDAOPedido;
+begin
+  lPedido := TPedido.create;
+  lDAOPedido := TDAOPedido.Create;
+  try
+    lDAOPedido.Inserir(lPedido);
+  finally
+    lPedido.Free;
+    lDAOPedido.Free;
+  end;
+end;
+
+end.

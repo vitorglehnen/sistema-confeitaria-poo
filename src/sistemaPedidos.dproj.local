@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/11/25 10:13:51.000.298,=C:\Users\vitor\OneDrive\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/25 10:15:49.000.357,C:\Users\vitor\OneDrive\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\view\viewPrincipal.pas</Transaction>
+    <Transaction>2022/11/25 10:15:49.000.357,C:\Users\vitor\OneDrive\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\view\viewPrincipal.dfm</Transaction>
+    <Transaction>2022/11/25 10:16:46.000.138,C:\Users\vitor\OneDrive\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\sistemaPedidos.dproj</Transaction>
+    <Transaction>2022/11/25 10:18:00.000.538,=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas</Transaction>
+    <Transaction>2022/11/25 10:26:51.000.200,C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\view\viewCadastrarPedido.pas</Transaction>
+    <Transaction>2022/11/25 10:26:51.000.200,C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.dfm=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\view\viewCadastrarPedido.dfm</Transaction>
+    <Transaction>2022/11/25 10:40:56.000.445,=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas</Transaction>
+    <Transaction>2022/11/25 10:48:01.000.563,C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\model\entitys\cliente.pas=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas</Transaction>
+    <Transaction>2022/11/25 10:56:07.000.950,=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\model\entitys\pedido.pas</Transaction>
+    <Transaction>2022/11/25 11:47:03.000.185,=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas</Transaction>
+    <Transaction>2022/11/25 11:49:58.000.731,C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\conexao\conexao.pas</Transaction>
+    <Transaction>2022/11/25 11:49:58.000.731,C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.dfm=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\conexao\conexao.dfm</Transaction>
+    <Transaction>2022/11/25 13:49:36.000.892,=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas</Transaction>
+    <Transaction>2022/11/25 13:57:22.000.816,C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\DAO\dao.usuario.pas</Transaction>
+    <Transaction>2022/11/25 14:55:54.000.245,=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas</Transaction>
+    <Transaction>2022/11/25 14:56:09.000.384,C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\DAO\dao.pedido.pas=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas</Transaction>
+    <Transaction>2022/11/25 14:56:49.000.891,C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\DAO\dao.usuario.pas=</Transaction>
+    <Transaction>2022/11/25 14:59:58.000.751,=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas</Transaction>
+    <Transaction>2022/11/25 15:00:40.000.570,=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas</Transaction>
+    <Transaction>2022/11/25 15:00:46.000.930,C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\DAO\dao.pedido.pas=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas</Transaction>
+    <Transaction>2022/11/25 15:03:16.000.294,=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas</Transaction>
+    <Transaction>2022/11/25 15:04:26.000.150,C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.dfm=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\view\viewInserirProdutos.dfm</Transaction>
+    <Transaction>2022/11/25 15:04:26.000.150,C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\view\viewInserirProdutos.pas</Transaction>
+    <Transaction>2022/11/25 15:20:58.000.984,C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\model\entitys\pedido.pas=</Transaction>
+    <Transaction>2022/11/25 15:21:04.000.152,=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas</Transaction>
+    <Transaction>2022/11/25 15:21:40.000.570,C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\model\entitys\model.entitys.pedido.pas=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas</Transaction>
+    <Transaction>2022/11/25 23:01:30.000.813,=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas</Transaction>
+    <Transaction>2022/11/25 23:29:46.000.556,C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\Unit1.pas=C:\Users\vitor\OneDrive\Área de Trabalho\Delphi\sistema refatorado\src\DAO\dao.tiposDeProduto.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="..\..\Sistema Confeitaria POO"/>
+    <File Path="..\model"/>
+    <File Path="..\model\entitys"/>
+    <File Path="..\model\entitys\model.entitys.pedido.pas"/>
+    <File Path="..\view"/>
+    <File Path="..\view\viewCadastrarPedido.pas"/>
+    <File Path="..\view\viewCadastrarPedido.dfm"/>
+    <File Path="..\view\viewInserirProdutos.pas"/>
+    <File Path="..\view\viewInserirProdutos.dfm"/>
+    <File Path="..\view\viewPrincipal.pas"/>
+    <File Path="..\view\viewPrincipal.dfm"/>
+    <File Path="conexao"/>
+    <File Path="conexao\conexao.pas"/>
+    <File Path="conexao\conexao.dfm"/>
+    <File Path="DAO"/>
+    <File Path="DAO\dao.pedido.pas"/>
+    <File Path="DAO\dao.tiposDeProduto.pas"/>
+  </ProjectSortOrder>
+</BorlandProject>

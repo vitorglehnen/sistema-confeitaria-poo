@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1AC7534B-4BD1-4EB1-8588-5150B2F8F708}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\sistemaPedidos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\sistema_mae\view\Project_sistema_mae.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="sistemaPedidos">
+        <MSBuild Projects="..\sistemaPedidos.dproj"/>
+    </Target>
+    <Target Name="sistemaPedidos:Clean">
+        <MSBuild Projects="..\sistemaPedidos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="sistemaPedidos:Make">
+        <MSBuild Projects="..\sistemaPedidos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project_sistema_mae">
+        <MSBuild Projects="..\..\..\sistema_mae\view\Project_sistema_mae.dproj"/>
+    </Target>
+    <Target Name="Project_sistema_mae:Clean">
+        <MSBuild Projects="..\..\..\sistema_mae\view\Project_sistema_mae.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project_sistema_mae:Make">
+        <MSBuild Projects="..\..\..\sistema_mae\view\Project_sistema_mae.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="sistemaPedidos;Project_sistema_mae"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="sistemaPedidos:Clean;Project_sistema_mae:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="sistemaPedidos:Make;Project_sistema_mae:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

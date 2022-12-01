@@ -1,0 +1,64 @@
+unit viewCadastrarPedido;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.WinXPickers, Vcl.Mask, Vcl.ComCtrls, Vcl.Imaging.pngimage, model.entitys.pedido;
+
+type
+  TfrmCadastrarPedido = class(TForm)
+    panelPageCadastro: TPanel;
+    panelImagemEmpresa: TPanel;
+    Image1: TImage;
+    panelDadosCliente: TPanel;
+    lblDataHoraEntrega: TLabel;
+    lblNomeCliente: TLabel;
+    lblTelefoneCliente: TLabel;
+    btConfirmar: TButton;
+    dataEntrega: TDateTimePicker;
+    editEnderecoCliente: TLabeledEdit;
+    editNomeCliente: TEdit;
+    editTelefoneCliente: TMaskEdit;
+    horaEntrega: TTimePicker;
+    rdbtClienteRetira: TRadioGroup;
+    procedure btConfirmarClick(Sender: TObject);
+  private
+  public
+  end;
+
+implementation
+
+uses
+  System.SysUtils, dao.pedido, viewInserirProdutos;
+
+
+{$R *.dfm}
+
+
+procedure TfrmCadastrarPedido.btConfirmarClick(Sender: TObject);
+var
+  lPedido : TPedido;
+  lDAOPedido : TDAOPedido;
+  lFrmInserirProdutos : TfrmInserirProdutos;
+begin
+  lPedido := TPedido.create;
+  lDAOPedido := TDAOPedido.Create;
+  lFrmInserirProdutos := TfrmInserirProdutos.Create(nil);
+  try
+    lPedido.Nome := editNomeCliente.Text;
+    lPedido.DataEntrega := dataEntrega.Date;
+    lPedido.HoraEntrega := horaEntrega.Time;
+    lPedido.Telefone := editTelefoneCliente.text;
+    lPedido.Endereco := editEnderecoCliente.text;
+    lDAOPedido.Inserir(lPedido);
+    lFrmInserirProdutos.ShowModal();
+  finally
+    lPedido.Free;
+    lDAOPedido.Free;
+    lFrmInserirProdutos.Free;
+  end;
+end;
+
+end.

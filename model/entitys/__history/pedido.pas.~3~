@@ -1,0 +1,60 @@
+unit pedido;
+
+interface
+
+uses
+System.SysUtils;
+
+type
+  TPedido = class
+    private
+      FNome: string;
+      FDataEntrega: TDate;
+      FHoraEntrega: TTime;
+      FTelefone: string;
+      FEndereco: string;
+    public
+      function Nome(Value : string) : string;
+      function DataEntrega(Value: Tdate) : Tdate;
+      function HoraEntrega(Value: Ttime) : Ttime;
+      function Telefone(Value: string) : string;
+      function Endereco(Value: string) : string;
+  end;
+
+implementation
+
+uses
+  Vcl.Dialogs;
+
+{ TPedido }
+
+function TPedido.DataEntrega(Value: Tdate): Tdate;
+begin
+  result := FDataEntrega;
+end;
+
+function TPedido.Endereco(Value: string): string;
+begin
+  result := FEndereco;
+end;
+
+function TPedido.HoraEntrega(Value: Ttime): Ttime;
+begin
+  result := FHoraEntrega;
+end;
+
+function TPedido.Nome(Value: string): string;
+begin
+  if Value = '' then
+    showMessage('o nome não pode ser vazio');
+  result := FNome;
+end;
+
+function TPedido.Telefone(Value: string): string;
+begin
+  if Value = '' then
+    ShowMessage('o telefone não ser vazio');
+  result := FTelefone;
+end;
+
+end.

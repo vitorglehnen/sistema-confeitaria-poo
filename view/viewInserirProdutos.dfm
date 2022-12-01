@@ -1,0 +1,155 @@
+object frmInserirProdutos: TfrmInserirProdutos
+  Left = 0
+  Top = 0
+  Caption = 'Inserir Produtos'
+  ClientHeight = 761
+  ClientWidth = 1284
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object panelPageProdutos: TPanel
+    Left = 0
+    Top = 0
+    Width = 1284
+    Height = 761
+    Align = alClient
+    TabOrder = 0
+    object panelTiposDeProduto: TPanel
+      Left = 1
+      Top = 1
+      Width = 305
+      Height = 759
+      Align = alLeft
+      Ctl3D = False
+      ParentCtl3D = False
+      TabOrder = 0
+      object lblNomeDoProduto: TLabel
+        Left = 32
+        Top = 160
+        Width = 83
+        Height = 13
+        Caption = 'Nome do produto'
+      end
+      object lblTamanhoDoProduto: TLabel
+        Left = 32
+        Top = 240
+        Width = 100
+        Height = 13
+        Caption = 'Tamanho do produto'
+      end
+      object lblTipoDoProduto: TLabel
+        Left = 32
+        Top = 77
+        Width = 76
+        Height = 13
+        Caption = 'Tipo do produto'
+      end
+      object comboNomeDoProduto: TComboBox
+        Left = 32
+        Top = 179
+        Width = 145
+        Height = 21
+        Style = csDropDownList
+        TabOrder = 0
+      end
+      object comboTamanhoDoProduto: TComboBox
+        Left = 32
+        Top = 259
+        Width = 145
+        Height = 21
+        Style = csDropDownList
+        TabOrder = 1
+      end
+      object comboTiposDeProduto: TComboBox
+        Left = 32
+        Top = 96
+        Width = 145
+        Height = 21
+        Style = csDropDownList
+        TabOrder = 2
+        OnClick = comboTiposDeProdutoClick
+      end
+      object editObservacoes: TEdit
+        Left = 32
+        Top = 336
+        Width = 145
+        Height = 73
+        AutoSize = False
+        TabOrder = 3
+        TextHint = 'Observa'#231#245'es'
+      end
+      object btAdicionarProduto: TButton
+        Left = 31
+        Top = 472
+        Width = 100
+        Height = 25
+        Caption = 'Adicionar produto'
+        TabOrder = 4
+        OnClick = btAdicionarProdutoClick
+      end
+    end
+    object panelGridProdutos: TPanel
+      Left = 306
+      Top = 1
+      Width = 977
+      Height = 759
+      Align = alClient
+      TabOrder = 1
+      object btCancelarPedido: TButton
+        Left = 389
+        Top = 76
+        Width = 145
+        Height = 41
+        Caption = 'Cancelar este pedido'
+        TabOrder = 0
+        OnClick = btCancelarPedidoClick
+      end
+      object btFinalizarPedido: TButton
+        Left = 238
+        Top = 76
+        Width = 145
+        Height = 41
+        Caption = 'Finalizar pedido'
+        TabOrder = 1
+        OnClick = btFinalizarPedidoClick
+      end
+      object ListView1: TListView
+        Left = 56
+        Top = 179
+        Width = 825
+        Height = 358
+        Columns = <
+          item
+            AutoSize = True
+            Caption = 'Nome do cliente'
+          end
+          item
+            AutoSize = True
+            Caption = 'Produto'
+          end
+          item
+            AutoSize = True
+            Caption = 'Tamanho'
+          end
+          item
+            AutoSize = True
+            Caption = 'Valor'
+          end
+          item
+            AutoSize = True
+            Caption = 'Observa'#231#245'es'
+          end>
+        TabOrder = 2
+        ViewStyle = vsReport
+      end
+    end
+  end
+end

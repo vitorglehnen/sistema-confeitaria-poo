@@ -1,0 +1,15 @@
+program sistemaPedidos;
+
+uses
+  Vcl.Forms,
+  viewPrincipal in '..\view\viewPrincipal.pas' {frmPrincipal},
+  viewCadastrarPedido in '..\view\viewCadastrarPedido.pas' {frmCadastrarPedido};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.Run;
+end.

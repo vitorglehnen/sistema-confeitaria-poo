@@ -1,0 +1,32 @@
+unit dao.tiposDeProduto;
+
+interface
+
+uses
+  conexao;
+
+type
+  TDAOTiposDeProduto = class
+    private
+      FConn: TDMConexao;
+    public
+      constructor Create;
+      destructor Destroy; override;
+  end;
+
+implementation
+
+{ TDAOTiposDeProduto }
+
+constructor TDAOTiposDeProduto.Create;
+begin
+  FConn := TDMConexao.Create(nil);
+end;
+
+destructor TDAOTiposDeProduto.Destroy;
+begin
+  FConn.Free;
+  inherited;
+end;
+
+end.

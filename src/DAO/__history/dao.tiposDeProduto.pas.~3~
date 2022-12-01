@@ -1,0 +1,125 @@
+unit dao.tiposDeProduto;
+
+interface
+
+uses
+  conexao, System.Classes, Vcl.StdCtrls;
+
+type
+  TDAOTiposDeProduto = class
+    private
+      FConn: TDMConexao;
+    public
+      ListaCombo : TList;
+      constructor Create;
+      destructor Destroy; override;
+      procedure BuscaTiposDeProdutos(Value: TComboBox);
+      procedure BuscaNomeDosProdutos(Value, Value1: TComboBox);
+      procedure BuscaTamanhoDosProdutos(Value, Value1: TComboBox);
+  end;
+
+implementation
+
+uses
+  Vcl.Dialogs, System.SysUtils;
+
+{ TDAOTiposDeProduto }
+
+procedure TDAOTiposDeProduto.BuscaNomeDosProdutos(Value, Value1: TComboBox);
+var
+  tipo_produto : string;
+begin
+  FConn.StartTransaction;
+  try
+    value1.Items.Clear;
+
+    if value.Text = 'Torta doce' then
+      tipo_produto := 'tortas_doces';
+
+    if value.Text = 'Torta salgada' then
+      tipo_produto := 'tortas_salgadas';
+
+    if value.Text = 'Sobremesa' then
+      tipo_produto := 'sobremesas';
+
+    FConn.SQL('SELECT * FROM ' + tipo_produto);
+    FConn.Open;
+    FConn.First;
+    FConn.Commit;
+
+    while not FConn.FDQuery1.Eof do
+    begin
+      Value1.items.Add(FConn.FDQuery1['nome']);
+      FConn.Next;
+    end;
+  except
+    FConn.Rollback;
+    raise Exception.Create('Erro ao procurar os tipos de produto');
+  end;
+end;
+
+procedure TDAOTiposDeProduto.BuscaTamanhoDosProdutos(Value, Value1: TComboBox);
+var
+  tipo_produto: String;
+begin
+  FConn.StartTransaction;
+  try
+    value1.Items.Clear;
+
+    if value.Text = 'Torta doce' then
+      tipo_produto := 'precos_tortas_doces';
+
+    if value.Text = 'Torta salgada' then
+      tipo_produto := 'precos_tortas_salgadas';
+
+    if value.Text = 'Sobremesa' then
+      tipo_produto := 'precos_sobremesa';
+
+    FConn.SQL('SELECT * FROM ' + tipo_produto + ' ORDER BY preco');
+    FConn.Open;
+    FConn.First;
+    FConn.Commit;
+
+    while not FConn.FDQuery1.Eof do
+    begin
+      Value1.items.Add(FConn.FDQuery1['tamanho']);
+      FConn.Next;
+    end;
+  except
+    FConn.Rollback;
+    raise Exception.Create('Erro ao procurar os tipos de produto');
+  end;
+end;
+
+procedure TDAOTiposDeProduto.BuscaTiposDeProdutos(Value: TComboBox);
+begin
+  FConn.StartTransaction;
+  try
+    FConn.SQL('SELECT * FROM tipos_de_produto');
+    FConn.Open;
+    FConn.First;
+    FConn.Commit;
+
+    while not FConn.FDQuery1.Eof do
+    begin
+      Value.items.Add(FConn.FDQuery1['tipo']);
+      FConn.Next;
+    end;
+  except
+    FConn.Rollback;
+    raise Exception.Create('Erro ao procurar os tipos de produto');
+  end;
+end;
+
+constructor TDAOTiposDeProduto.Create;
+begin
+  FConn := TDMConexao.Create(nil);
+end;
+
+destructor TDAOTiposDeProduto.Destroy;
+begin
+  FConn.Free;
+  inherited;
+end;
+
+end.

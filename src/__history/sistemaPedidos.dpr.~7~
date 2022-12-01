@@ -1,0 +1,19 @@
+program sistemaPedidos;
+
+uses
+  Vcl.Forms,
+  viewPrincipal in '..\view\viewPrincipal.pas' {frmPrincipal},
+  viewCadastrarPedido in '..\view\viewCadastrarPedido.pas' {frmCadastrarPedido},
+  pedido in '..\model\entitys\pedido.pas',
+  conexao in 'conexao\conexao.pas' {dmConexao: TDataModule},
+  dao.usuario in 'DAO\dao.usuario.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  ReportMemoryLeaksOnShutdown := True;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.Run;
+end.

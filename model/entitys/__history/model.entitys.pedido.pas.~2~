@@ -1,0 +1,27 @@
+unit model.entitys.pedido;
+
+interface
+
+uses
+System.SysUtils, Vcl.Dialogs;
+
+type
+  TPedido = class
+    private
+      FNome: string;
+      FDataEntrega: TDate;
+      FHoraEntrega: TTime;
+      FTelefone: String;
+      FEndereco: String;
+    public
+      property Nome: String read FNome write FNome;
+      property DataEntrega: TDate read FDataEntrega write FDataEntrega;
+      property HoraEntrega: TTime read FHoraEntrega write FHoraEntrega;
+      property Telefone: String read FTelefone write FTelefone;
+      property Endereco: String read FEndereco write FEndereco;
+  end;
+
+implementation
+
+
+end.

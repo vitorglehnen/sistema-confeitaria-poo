@@ -1,0 +1,24 @@
+unit cliente;
+
+interface
+
+uses
+System.SysUtils;
+
+type
+  TPedido = class
+    private
+      FNome: string;
+      FDataHoraEntrega: string;
+      FTelefone: string;
+      FEndereco: string;
+    public
+      property Nome: string read FNome write FNome;
+      property DataHoraEntrega: string read FDataHoraEntrega write FDataHoraEntrega;
+      property Telefone: string read FTelefone write FTelefone;
+      property Endereco: string read FEndereco write FEndereco;
+  end;
+
+implementation
+
+end.

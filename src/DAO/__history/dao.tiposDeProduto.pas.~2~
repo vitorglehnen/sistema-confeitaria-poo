@@ -1,0 +1,99 @@
+unit dao.tiposDeProduto;
+
+interface
+
+uses
+  conexao, System.Classes, Vcl.StdCtrls;
+
+type
+  TDAOTiposDeProduto = class
+    private
+      FConn: TDMConexao;
+    public
+      ListaCombo : TList;
+      constructor Create;
+      destructor Destroy; override;
+      procedure BuscaTiposDeProdutos(Value: TComboBox);
+      procedure BuscaNomeDosProdutos(Value: TComboBox);
+      procedure BuscaTamanhoDosProdutos(Value: TComboBox);
+  end;
+
+implementation
+
+uses
+  Vcl.Dialogs, System.SysUtils;
+
+{ TDAOTiposDeProduto }
+
+procedure TDAOTiposDeProduto.BuscaNomeDosProdutos(Value: TComboBox);
+begin
+  FConn.StartTransaction;
+  try
+    FConn.SQL('SELECT * FROM tortas_doces');
+    FConn.Open;
+    FConn.First;
+    FConn.Commit;
+
+    while not FConn.FDQuery1.Eof do
+    begin
+      Value.items.Add(FConn.FDQuery1['nome']);
+      FConn.Next;
+    end;
+  except
+    FConn.Rollback;
+    raise Exception.Create('Erro ao procurar os tipos de produto');
+  end;
+end;
+
+procedure TDAOTiposDeProduto.BuscaTamanhoDosProdutos(Value: TComboBox);
+begin
+  FConn.StartTransaction;
+  try
+    FConn.SQL('SELECT * FROM precos_tortas_doces ORDER BY preco');
+    FConn.Open;
+    FConn.First;
+    FConn.Commit;
+
+    while not FConn.FDQuery1.Eof do
+    begin
+      Value.items.Add(FConn.FDQuery1['tamanho']);
+      FConn.Next;
+    end;
+  except
+    FConn.Rollback;
+    raise Exception.Create('Erro ao procurar os tipos de produto');
+  end;
+end;
+
+procedure TDAOTiposDeProduto.BuscaTiposDeProdutos(Value: TComboBox);
+begin
+  FConn.StartTransaction;
+  try
+    FConn.SQL('SELECT * FROM tipos_de_produto');
+    FConn.Open;
+    FConn.First;
+    FConn.Commit;
+
+    while not FConn.FDQuery1.Eof do
+    begin
+      Value.items.Add(FConn.FDQuery1['tipo']);
+      FConn.Next;
+    end;
+  except
+    FConn.Rollback;
+    raise Exception.Create('Erro ao procurar os tipos de produto');
+  end;
+end;
+
+constructor TDAOTiposDeProduto.Create;
+begin
+  FConn := TDMConexao.Create(nil);
+end;
+
+destructor TDAOTiposDeProduto.Destroy;
+begin
+  FConn.Free;
+  inherited;
+end;
+
+end.

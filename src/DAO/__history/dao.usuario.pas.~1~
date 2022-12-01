@@ -1,0 +1,50 @@
+unit dao.usuario;
+
+interface
+
+uses
+  pedido, conexao;
+
+type
+  TDAOUsuario = class
+  private
+    FConn: TDMConexao;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure Inserir(Value: TPedido);
+    procedure Apagar(Value: TPedido);
+    function Alterar(Value: TPedido): TPedido;
+  end;
+
+implementation
+
+{ TDAOUsuario }
+
+function TDAOUsuario.Alterar(Value: TPedido): TPedido;
+begin
+
+end;
+
+procedure TDAOUsuario.Apagar(Value: TPedido);
+begin
+
+end;
+
+constructor TDAOUsuario.Create;
+begin
+  FConn := TDMConexao.Create(nil);
+end;
+
+destructor TDAOUsuario.Destroy;
+begin
+  FConn.Free;
+  inherited;
+end;
+
+procedure TDAOUsuario.Inserir(Value: TPedido);
+begin
+
+end;
+
+end.

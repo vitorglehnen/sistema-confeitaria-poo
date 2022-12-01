@@ -1,0 +1,68 @@
+unit dao.pedido;
+
+interface
+
+uses
+  model.entitys.pedido, conexao, System.SysUtils;
+
+type
+  TDAOPedido = class
+  private
+    FConn: TDMConexao;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure Inserir(Value: TPedido);
+    procedure Apagar(Value: TPedido);
+    function Alterar(Value: TPedido): TPedido;
+  end;
+
+implementation
+
+uses
+  Vcl.Dialogs;
+
+{ TDAOUsuario }
+
+function TDAOPedido.Alterar(Value: TPedido): TPedido;
+begin
+  Result := TPedido.Create;
+end;
+
+procedure TDAOPedido.Apagar(Value: TPedido);
+begin
+  abort;
+end;
+
+constructor TDAOPedido.Create;
+begin
+  FConn := TDMConexao.Create(nil);
+end;
+
+destructor TDAOPedido.Destroy;
+begin
+  FConn.Free;
+  inherited;
+end;
+
+procedure TDAOPedido.Inserir(Value: TPedido);
+begin
+  FConn.StartTransaction;
+  try
+    FConn.SQL('INSERT INTO pedidos (nome, data_entrega, hora_entrega, telefone,'
+    + ' endereco) VALUES (:nome, :data_entrega, :hora_entrega, :telefone, :endereco)');
+    FConn.Params('nome', Value.Nome);
+    FConn.Params('data_entrega', FormatDateTime('YYYY/MM/DD', Value.DataEntrega));
+    FConn.Params('hora_entrega', TimeToStr(Value.HoraEntrega));
+    FConn.Params('telefone', Value.Telefone);
+    FConn.Params('endereco', Value.Endereco);
+    FConn.ExecSQL;
+    FConn.Commit;
+    Showmessage('Pedido inserido com sucesso');
+  except
+    FConn.Rollback;
+    raise Exception.Create('Erro ao inserir o pedido!');
+  end;
+end;
+
+end.

@@ -1,0 +1,36 @@
+unit viewInserirProdutos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TfrmInserirProdutos = class(TForm)
+    panelPageProdutos: TPanel;
+    panelTiposDeProduto: TPanel;
+    lblNomeDoProduto: TLabel;
+    lblTamanhoDoProduto: TLabel;
+    lblTipoDoProduto: TLabel;
+    comboNomeDoProduto: TComboBox;
+    comboTamanhoDoProduto: TComboBox;
+    comboTiposDeProduto: TComboBox;
+    editObservacoes: TEdit;
+    btAdicionarProduto: TButton;
+    panelGridProdutos: TPanel;
+    btCancelarPedido: TButton;
+    btFinalizarPedido: TButton;
+    DBGrid1: TDBGrid;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+implementation
+
+{$R *.dfm}
+
+end.

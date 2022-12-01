@@ -1,0 +1,54 @@
+unit viewInserirProdutos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Dialogs;
+
+type
+  TfrmInserirProdutos = class(TForm)
+    panelPageProdutos: TPanel;
+    panelTiposDeProduto: TPanel;
+    lblNomeDoProduto: TLabel;
+    lblTamanhoDoProduto: TLabel;
+    lblTipoDoProduto: TLabel;
+    comboNomeDoProduto: TComboBox;
+    comboTamanhoDoProduto: TComboBox;
+    comboTiposDeProduto: TComboBox;
+    editObservacoes: TEdit;
+    btAdicionarProduto: TButton;
+    panelGridProdutos: TPanel;
+    btCancelarPedido: TButton;
+    btFinalizarPedido: TButton;
+    DBGrid1: TDBGrid;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+implementation
+
+uses
+  dao.tiposDeProduto;
+
+{$R *.dfm}
+
+procedure TfrmInserirProdutos.FormCreate(Sender: TObject);
+var
+  lDAOTiposDeProduto : TDAOTiposDeProduto;
+begin
+  lDAOTiposDeProduto := TDAOTiposDeProduto.Create;
+  try
+    lDAOTiposDeProduto.BuscaTiposDeProdutos(comboTiposDeProduto);
+    lDAOTiposDeProduto.BuscaNomeDosProdutos(comboNomeDoProduto);
+    lDAOTiposDeProduto.BuscaTamanhoDosProdutos(comboTamanhoDoProduto);
+  finally
+    lDAOTiposDeProduto.Free;
+  end;
+end;
+
+end.

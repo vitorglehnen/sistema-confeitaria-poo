@@ -1,0 +1,50 @@
+unit model.entitys.pedido;
+
+interface
+
+uses
+System.SysUtils, Vcl.Dialogs;
+
+type
+  TPedido = class
+    private
+      FNome: string;
+      FDataEntrega: TDate;
+      FHoraEntrega: TTime;
+      FTelefone: String;
+      FEndereco: String;
+    public
+      function SetNome(Value: String) : String;
+      property Nome: String read FNome;
+      property DataEntrega: TDate read FDataEntrega write FDataEntrega;
+      property HoraEntrega: TTime read FHoraEntrega write FHoraEntrega;
+      function SetTelefone(Value: String) : String;
+      property Telefone: String read FTelefone;
+      property Endereco: String read FEndereco write FEndereco;
+  end;
+
+implementation
+
+function TPedido.SetNome(Value: String): String;
+begin
+  if (Value.IsEmpty) or (Value.Length < 3) then
+  begin
+    ShowMessage('Nome inválido, deve conter pelo menos 3 caracteres');
+    abort;
+  end;
+  FNome := Value;
+  result := Value;
+end;
+
+function TPedido.SetTelefone(Value: String): String;
+begin
+  if Value.Length < 11 then
+  begin
+    ShowMessage('Número de telefone inválido!');
+    abort;
+  end;
+  FTelefone := Value;
+  result := Value;
+end;
+
+end.

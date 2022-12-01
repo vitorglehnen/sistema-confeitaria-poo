@@ -1,0 +1,14 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 379
+  Width = 532
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=sistemaangela'
+      'User_Name=root'
+      'DriverID=MySQL')
+    LoginPrompt = False
+    Left = 48
+    Top = 40
+  end
+end
